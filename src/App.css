@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
+/* Styling for the Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 2px solid #00f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav div {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #00f;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav button:hover {
+    border-bottom: 2px solid #00f;
 }
 
-.App-link {
-  color: #61dafb;
+nav input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*   
+  nav button:last-child {
+    background-color: #00f;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+  } */
+
+/* Styling for the movie cards container */
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling for individual movie cards */
+.movie-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.movie-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.movie-card button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+nav button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #333;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav button.active {
+    color: #00f;
+    border-bottom: 2px solid #00f;
+    /* Blue underline for active link */
+}
+
+nav button:hover {
+    color: #00f;
+}
+
+nav input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+nav button.search-btn {
+    background-color: #00f;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: none;
+}
+
+
+/* Modal backdrop */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+}
+
+/* Modal body split into left and right */
+.modal-body {
+    display: flex;
+}
+
+.modal-left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.modal-left img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.modal-right {
+    flex: 2;
+}
+
+.modal-right h2 {
+    margin-top: 0;
+}
+
+.modal-right p {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
